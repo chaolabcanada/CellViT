@@ -1006,9 +1006,9 @@ class PreProcessor(object):
         # open slide
         slide = OpenSlide(str(wsi_file))
         slide_cu = self.image_loader(str(wsi_file))
-        tile_size = patch_to_tile_size(
+        tile_size, _ = patch_to_tile_size(
             self.config.patch_size, self.config.patch_overlap
-        )
+        ) # JC edit 11062024
 
         # extract all patches
         patches = []
